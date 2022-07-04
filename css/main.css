@@ -16,7 +16,7 @@ body {
 .portfolio .box .image::before,
 .video:before,
 .artist::before,
-.design:before,
+.design-section:before,
 .subscribe:before {
   content: "";
   position: absolute;
@@ -28,7 +28,7 @@ body {
 .modern .overlay::before,
 .video::before,
 .artist::before,
-.design:before,
+.design-section:before,
 .subscribe:before {
   background-color: rgba(0, 0, 0, 0.65);
   left: 0;
@@ -403,12 +403,12 @@ body {
 }
 /* End News */
 /* Start design */
-.design {
+.design-section {
   background-image: url("../images/modern-design.jpg");
   background-size: cover;
   height: 500px;
 }
-.design h3::before {
+.design-section h3::before {
   content: "";
   position: absolute;
   width: 100px;
@@ -418,7 +418,7 @@ body {
   bottom: -20px;
 }
 @media (max-width: 991px) {
-  .design h3::before {
+  .design-section h3::before {
     left: 50%;
     transform: translateX(-50%);
   }
