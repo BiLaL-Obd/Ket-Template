@@ -1,0 +1,493 @@
+* {
+  transition: color 0.3s;
+}
+:root {
+  --main-color: #00e1ff;
+  --a-color: #6d7fa1;
+  --section-color: #f6f6f6;
+  --transition: 0.3s;
+}
+body {
+  font-family: "Raleway", sans-serif;
+}
+/* Start Component */
+.home::before,
+.modern .overlay::before,
+.portfolio .box .image::before,
+.video:before,
+.artist::before,
+.design:before,
+.subscribe:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.home::before,
+.modern .overlay::before,
+.video::before,
+.artist::before,
+.design:before,
+.subscribe:before {
+  background-color: rgba(0, 0, 0, 0.65);
+  left: 0;
+}
+.portfolio .box .image::before {
+  left: -100%;
+  background-color: rgb(0 225 255 / 50%);
+  transition: var(--transition);
+}
+.services .row h5::before,
+.main-title h3::before,
+.portfolio .box .text h5:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: var(--main-color);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.services .row h5::before {
+  bottom: -12px;
+  width: 80px;
+}
+.portfolio .box .text h5:before {
+  bottom: -20px;
+  width: 90px;
+}
+.main-title h3::before {
+  bottom: -20px;
+  width: 150px;
+}
+.main-title p:first-of-type {
+  width: 70%;
+}
+@media (max-width: 767px) {
+  .main-title p {
+    width: 95%;
+  }
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover,
+.home button:hover,
+.services .row svg,
+.information svg {
+  color: var(--main-color) !important;
+}
+/* End Component */
+/* Start Navbar */
+.navbar {
+  border-bottom: 1px solid #e6e6e6;
+  background-color: white;
+}
+.navbar .navbar-brand img {
+  width: 120px;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler {
+  border: 1px solid var(--main-color);
+}
+.navbar-nav .nav-link {
+  color: var(--a-color);
+  position: relative;
+}
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--main-color);
+  bottom: -18px;
+  left: 0;
+}
+@media (max-width: 991px) {
+  .navbar-nav .nav-link::before {
+    bottom: 0;
+  }
+}
+.navbar-nav .nav-link.active:before,
+.navbar-nav .nav-link:hover:before {
+  width: 100%;
+}
+/* End Navbar */
+/* Start Header */
+.home {
+  background-image: url(../images/artist-design.jpg);
+  background-size: cover;
+  min-height: calc(100vh - 75px);
+}
+/* End Header */
+/* Start Services */
+
+/* End Services */
+/* Start Mobile */
+.mobile {
+  background-color: var(--section-color);
+}
+.mobile .box.active {
+  border: 1px solid var(--main-color);
+}
+.mobile .box.active::after,
+.mobile .box.active::before {
+  content: "";
+  position: absolute;
+  clip-path: polygon(54% 100%, 0 39%, 100% 40%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mobile .box.active::before {
+  width: 20px;
+  height: 20px;
+  bottom: -12px;
+  background-color: var(--main-color);
+}
+.mobile .box.active::after {
+  width: 15px;
+  height: 15px;
+  background-color: var(--section-color);
+  bottom: -9px;
+}
+.mobile button,
+.mobile button:hover {
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+}
+/* End Mobile */
+/* Start Modern */
+.modern .overlay {
+  background-image: url("../images/modern-design.jpg");
+  background-size: cover;
+  height: 600px;
+}
+.modern img {
+  width: 500px;
+  height: 350px;
+}
+.modern .text .box {
+  width: 550px;
+}
+@media (max-width: 767px) {
+  .modern .text .box {
+    width: 350px;
+  }
+}
+.modern .text .box::after,
+.modern .text .box::before {
+  content: "";
+  position: absolute;
+}
+.modern .text .box::before {
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--main-color);
+  background-color: var(--section-color);
+  top: 3px;
+  left: -75px;
+  border-radius: 50%;
+}
+.modern .text .box::after {
+  width: 1px;
+  height: calc(100% - 1rem);
+  background-color: var(--main-color);
+  top: 20px;
+  left: -66px;
+}
+.modern .text .box:not(:last-child):after {
+  height: calc(100% + 1.5rem);
+}
+@media (max-width: 767px) {
+  .modern .text .box::before,
+  .modern .text .box::after {
+    width: 0;
+    height: 0;
+    border: none;
+  }
+}
+.modern .text label {
+  width: 170px;
+  left: -350px;
+  color: var(--main-color);
+}
+.modern button {
+  border: none;
+  color: var(--main-color);
+  padding: 0;
+}
+.modern button:hover {
+  color: var(--a-color);
+}
+/* End Modern */
+/* Start Portfolio */
+.portfolio {
+  background-color: var(--section-color);
+}
+.portfolio ul li {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .portfolio ul {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+}
+.portfolio ul li:hover {
+  color: var(--main-color);
+}
+.portfolio ul li.active {
+  border: 1px solid var(--main-color);
+}
+.portfolio .imgs .box {
+  width: 350px;
+}
+.portfolio .box {
+  user-select: none;
+}
+.portfolio .box:hover .image::before {
+  left: 0;
+}
+.portfolio .box .image::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\2b";
+  font-weight: 900;
+  position: absolute;
+  left: -50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  color: var(--main-color);
+  font-size: 24px;
+  transition: var(--transition);
+}
+.portfolio .box:hover .image::after {
+  left: 50%;
+}
+/* End Portfolio */
+/* Start Video */
+.video {
+  background-image: url("../images/video.jpg");
+  background-size: cover;
+  height: 600px;
+}
+.video svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  border: 1px solid white;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* End Video */
+/* Start Information */
+.information {
+  background-color: #141a22;
+}
+.information p {
+  font-size: 13px;
+}
+/* End Information */
+/* Start Team */
+.team .info {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.team .box {
+  background-color: var(--section-color);
+}
+.team .text ul a {
+  display: block;
+  width: 55px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 20px;
+  transition: var(--transition);
+}
+.team .text ul li:hover .facebook {
+  background-color: #1877f2;
+}
+.team .text ul li:hover .twitter {
+  background-color: #1da1f2;
+}
+.team .text ul li:hover .google {
+  background-color: #dd4b39;
+}
+.team .text ul li:hover .chrome {
+  background-color: #ea1d5d;
+}
+.team .text ul a svg {
+  color: #333;
+  transition: 0s;
+}
+.team .text ul li:hover a svg {
+  color: white;
+}
+/* End Team */
+/* Start About */
+.about {
+  background-color: var(--section-color);
+}
+.about img {
+  height: 322px;
+}
+@media (max-width: 991px) {
+  .about img {
+    height: 100%;
+  }
+}
+/* End About */
+/* Start Artist */
+.artist {
+  background-image: url("../images/artist-design.jpg");
+  background-size: cover;
+  height: 300px;
+}
+.artist .box {
+  counter-increment: box;
+}
+.artist .box::before {
+  content: "0" counter(box);
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  line-height: 30px;
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.artist svg {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+/* End Artist */
+/* Start News */
+.news .box {
+  width: 80%;
+}
+@media (max-width: 767px) {
+  .news .box {
+    width: 100%;
+  }
+}
+.news .number {
+  width: 170px;
+}
+.news .box .text {
+  background-color: var(--section-color);
+}
+.news .box a {
+  color: var(--main-color);
+  border: none;
+  cursor: pointer;
+}
+.news .box a:hover {
+  color: var(--a-color);
+}
+.news .box .number span:first-child {
+  font-size: 55px;
+  color: var(--main-color);
+}
+/* End News */
+/* Start design */
+.design {
+  background-image: url("../images/modern-design.jpg");
+  background-size: cover;
+  height: 500px;
+}
+.design h3::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: var(--main-color);
+  left: 0;
+  bottom: -20px;
+}
+@media (max-width: 991px) {
+  .design h3::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/* End design */
+/* Start Clients */
+.clients .box span {
+  color: var(--main-color);
+}
+/* End Clients */
+/* Start Subscribe */
+.subscribe {
+  background-image: url("../images/modern-design.jpg");
+  background-size: cover;
+  height: 200px;
+}
+.subscribe a {
+  border: 1px solid var(--main-color);
+  width: fit-content;
+  margin: 30px auto;
+}
+/* End Subscribe */
+/* Start Contact */
+.contact {
+  background-color: #141a22;
+}
+.contact form .input {
+  border: none !important;
+  border-bottom: 1px solid white !important;
+}
+.contact form input {
+  caret-color: var(--main-color);
+  color: white;
+}
+.contact form input:focus {
+  outline: none;
+}
+.contact form input[type="submit"] {
+  border: 1px solid var(--main-color);
+}
+/* End Contact */
+/* Start Map */
+.map ul {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.map ul li {
+  background-color: rgb(0 225 255 / 90%);
+  padding: 8px;
+}
+.map ul .last::before {
+  content: "";
+  position: absolute;
+  border-width: 15px;
+  border-style: solid;
+  border-color: var(--main-color) transparent transparent transparent;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* End Map */
+/* Start Footer */
+footer {
+  background-color: #141a22;
+}
+footer span {
+  color: var(--main-color);
+}
+/* End Footer */
